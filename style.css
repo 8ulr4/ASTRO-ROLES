@@ -1,1 +1,87 @@
+/* تنسيقات الخطوط والخلفية العامة */
+@import url('https://googleapis.com');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0b0914; /* لون خلفية داكن */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* شريط التنقل العلوي */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(15, 12, 28, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #8a2be2;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+    background-color: #8a2be2; /* اللون البنفسجي للزر النشط */
+    box-shadow: 0 0 15px #8a2be2;
+}
+
+/* القسم الرئيسي والمحتوى */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle, #1a0f30 0%, #0b0914 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 15px #8a2be2;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #d1cbe3;
+}
