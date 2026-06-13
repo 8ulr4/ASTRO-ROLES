@@ -80,13 +80,14 @@
 
         /* القسم الرئيسي للموقع */
         .hero-section {
-            height: 100vh;
+            height: 60vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
             background: radial-gradient(circle at center, #1b1035 0%, #0b0914 100%);
+            padding-top: 80px;
         }
 
         .hero-content {
@@ -96,11 +97,11 @@
         }
 
         .main-logo-container {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             background: radial-gradient(circle, #8a2be2, #0b0914);
             border-radius: 50%;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
             display: flex;
             justify-content: center;
@@ -110,122 +111,110 @@
         }
 
         .title {
-            font-size: 65px;
+            font-size: 55px;
             font-weight: 900;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .description {
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.8;
             color: #d1cbe3;
         }
 
-        /* الأقسام العامة المحاذية للمحتوى */
+        /* أقسام المحتوى المتطابقة بالملي مع الصورة */
         .content-section {
-            padding: 100px 8%;
+            padding: 40px 8% 80px 8%;
             background: #09060f;
-            border-top: 1px solid rgba(138, 43, 226, 0.1);
-        }
-
-        .content-section:nth-child(even) {
-            background: #0b0914;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 900;
-            margin-bottom: 50px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
         }
 
-        /* تنسيق شبكات البطاقات المشترك */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(138, 43, 226, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        .card-box:hover {
-            transform: translateY(-5px);
-            background: rgba(138, 43, 226, 0.05);
-            border-color: rgba(138, 43, 226, 0.5);
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
-        }
-
-        .card-box h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #c084fc;
-        }
-
-        .card-box p {
-            font-size: 15px;
-            color: #9ca3af;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* أزرار مخصصة للوظائف والتفعيل */
-        .btn-action {
-            display: inline-block;
-            background: #8a2be2;
-            color: white;
-            text-decoration: none;
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: 0.3s;
-            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
-        }
-
-        .btn-action:hover {
-            background: #9d4edd;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-        }
-
-        /* قسم المؤسسين */
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: #1b1035;
-            border: 2px solid #8a2be2;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+        .rules-list {
+            width: 100%;
+            max-width: 850px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .role-tag {
-            display: inline-block;
-            background: rgba(138, 43, 226, 0.2);
-            color: #c084fc;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
+        /* أزرار القوانين العريضة والمستديرة الحواف نفس تصميم الصورة */
+        .rule-bar {
+            width: 100%;
+            background: linear-gradient(135deg, #6320a0 0%, #4a127a 100%);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            padding: 22px 35px;
+            border-radius: 25px; /* حواف دائرية واضحة */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .rule-bar:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+            background: linear-gradient(135deg, #7429bb 0%, #56168f 100%);
+        }
+
+        .rule-text {
+            font-size: 22px;
             font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .rule-icon {
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* تفاصيل شرح القوانين منسدلة بشكل تفاعلي */
+        .rule-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 35px;
+            background: rgba(15, 12, 28, 0.5);
+            border-radius: 0 0 20px 20px;
+            margin-top: -10px;
+            border: 1px solid transparent;
+            border-top: none;
+            width: 100%;
+        }
+
+        .rule-details p {
+            padding: 20px 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #d1cbe3;
+        }
+
+        .active-details {
+            max-height: 200px;
+            border-color: rgba(138, 43, 226, 0.2);
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- شريط التنقل العلوي الكامل المستوحى من لايف سيتي -->
+    <!-- شريط التنقل العلوي -->
     <header class="navbar">
         <div class="logo">
             <span>Astro City</span>
@@ -234,11 +223,11 @@
         <nav class="nav-links">
             <a href="#" class="active">الرئيسية</a>
             <a href="#rules">القوانين</a>
-            <a href="#store">المتجر</a>
-            <a href="#jobs">تقديم وظائف</a>
-            <a href="#servers">السيرفرات</a>
-            <a href="#founders">المؤسسين</a>
-            <a href="#verify">التفعيل</a>
+            <a href="#">المتجر</a>
+            <a href="#">تقديم وظائف</a>
+            <a href="#">السيرفرات</a>
+            <a href="#">المؤسسين</a>
+            <a href="#">التفعيل</a>
         </nav>
     </header>
 
@@ -248,73 +237,66 @@
             <div class="main-logo-container">AC</div>
             <h1 class="title">Astro City</h1>
             <p class="description">
-                سيرفر استرو سيتي هو مجتمع متكامل يهدف لتقديم تجربة حياة واقعية فريدة من نوعها في روبلوكس، نركز على الاحترافية والعدالة وبناء مجتمع مترابط وممتع للجميع.
+                سيرفر استرو سيتي هو مجتمع متكامل يهدف لتقديم تجربة حياة واقعية فريدة من نوعها في روبلوكس.
             </p>
         </div>
     </main>
 
-    <!-- قسم القوانين -->
+    <!-- قسم قوانين السيرفر المتطابق مع لقطة الشاشة بالملي -->
     <section id="rules" class="content-section">
-        <h2 class="section-title">قوانين مجتمع استرو سيتي</h2>
-        <div class="grid-container">
-            <div class="card-box">
-                <h3>⚖️ الاحترام والعدالة</h3>
-                <p>يمنع منعاً باتاً السب، أو الاستهزاء بأي عضو أو إداري داخل السيرفر والديسكورد.</p>
+        <h2 class="section-title">قوانين السيرفر</h2>
+        
+        <div class="rules-list">
+            
+            <!-- القانون الأول -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">قوانين الحياة الجديدة - NLR</span>
+                    <span class="rule-icon">📖</span>
+                </div>
+                <div class="rule-details">
+                    <p>عند موتك في اللعبة، تنسى كل ما حدث معك في حياتك السابقة ولا يمكنك العودة لموقع موتك إلا بعد مرور الوقت المحدد بالقوانين الداخلية.</p>
+                </div>
             </div>
-            <div class="card-box">
-                <h3>🚗 التخريب العمد (Fail RP)</h3>
-                <p>يجب الالتزام بأنظمة الحياة الواقعية وتجنب القيادة أو القيام بأفعال غير منطقية.</p>
+
+            <!-- القانون الثاني -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">الباور جيمنج - PowerGaming</span>
+                    <span class="rule-icon">🎮</span>
+                </div>
+                <div class="rule-details">
+                    <p>يمنع منعاً باتاً القيام بأفعال خارقة أو غير منطقية لا يمكن للإنسان الطبيعي القيام بها في الحياة الواقعية لتفادي الخسارة.</p>
+                </div>
             </div>
-            <div class="card-box">
-                <h3>🎙️ المايكروفون</h3>
-                <p>يجب توفر مايكروفون واضح وخالٍ من التشويش المزعج لضمان جودة التواصل واللعب.</p>
+
+            <!-- القانون الثالث -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">الخوف على الحياة - NVL</span>
+                    <span class="rule-icon">👤</span>
+                </div>
+                <div class="rule-details">
+                    <p>يجب عليك إظهار الخوف وتثمين حياتك عند تهديدك بالسلاح من قِبل مجموعة تفوقك عدداً أو تسليحاً وتطبيق مبدأ الحياة الواقعية.</p>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <!-- قسم المتجر -->
-    <section id="store" class="content-section">
-        <h2 class="section-title">متجر السيرفر</h2>
-        <div class="grid-container">
-            <div class="card-box">
-                <h3>🌟 حزمة VIP الفضية</h3>
-                <p>احصل على سيارة حصرية، رتبة متميزة في السيرفر، وميزات داخل اللعبة لمدة شهر.</p>
-                <a href="#" class="btn-action">شراء الآن</a>
-            </div>
-            <div class="card-box">
-                <h3>👑 حزمة VIP الذهبية</h3>
-                <p>سيارات خارقة متعددة، رتبة ذهبية، أولوية في دخول السيرفر المزدحم وميزات إدارية خفيفة.</p>
-                <a href="#" class="btn-action">شراء الآن</a>
-            </div>
-        </div>
-    </section>
+    <!-- كود برمجي بسيط لجعل الأزرار منسدلة وتفاعلية عند الضغط -->
+    <script>
+        function toggleRule(element) {
+            var details = element.nextElementSibling;
+            if (details.style.maxHeight && details.style.maxHeight !== "0px") {
+                details.style.maxHeight = "0px";
+                details.classList.remove("active-details");
+            } else {
+                details.style.maxHeight = details.scrollHeight + "px";
+                details.classList.add("active-details");
+            }
+        }
+    </script>
 
-    <!-- قسم تقديم الوظائف -->
-    <section id="jobs" class="content-section">
-        <h2 class="section-title">تقديم وظائف السيرفر</h2>
-        <div class="grid-container">
-            <div class="card-box">
-                <h3>👮 قطاع الشرطة</h3>
-                <p>انضم لحماة المدينة وضبط الأمن العام، التقديم مفتوح للكفاءات الملتزمة بالأنظمة.</p>
-                <a href="#" class="btn-action">تقديم الآن</a>
-            </div>
-            <div class="card-box">
-                <h3>🚑 قطاع الإسعاف</h3>
-                <p>كن منقذاً في المدينة وساعد المصابين، نوفر لك تدريباً طبياً متكاملاً رول بلي.</p>
-                <a href="#" class="btn-action">تقديم الآن</a>
-            </div>
-            <div class="card-box">
-                <h3>🛠️ وزارة الميكانيك</h3>
-                <p>قم بصيانة وتطوير سيارات المواطنين وتعديلها داخل الورشة الرسمية للمدينة.</p>
-                <a href="#" class="btn-action">تقديم الآن</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم السيرفرات -->
-    <section id="servers" class="content-section">
-        <h2 class="section-title">حالة السيرفرات</h2>
-        <div class="grid-container">
-            <div class="card-box">
-                <h3>🟢 سيرفر استرو الرئيسي</h3>
-                <p>الحالة: يعمل ومستقر حالياً.<br>اللاعبين المتواجدين: 85 / 100</p>
+</body>
+</html>
