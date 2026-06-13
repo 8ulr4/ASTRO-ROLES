@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro City | استرو سيتي</title>
+    
+    <!-- الأيقونات البرمجية لضمان مطابقة الصور بالملي -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
         @import url('https://googleapis.com');
 
@@ -59,9 +63,9 @@
             box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
         }
 
-        /* القسم الرئيسي للموقع */
+        /* القسم الرئيسي */
         .hero-section {
-            height: 45vh;
+            height: 40vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -110,38 +114,41 @@
             max-width: 850px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
-        /* أزرار عريضة مستديرة الحواف نفس الصورة */
+        /* الأزرار البنفسجية العريضة الدائرية الحواف نفس لقطات الشاشة */
         .rule-bar {
             width: 100%;
-            background: linear-gradient(135deg, #6320a0 0%, #4a127a 100%);
-            border: 1px solid rgba(138, 43, 226, 0.4);
-            padding: 22px 35px;
-            border-radius: 25px;
+            background-color: #9333ea;
+            padding: 20px 40px;
+            border-radius: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
         }
 
         .rule-bar:hover {
             transform: scale(1.01);
-            box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
-            background: linear-gradient(135deg, #7429bb 0%, #56168f 100%);
+            background-color: #a855f7;
+            box-shadow: 0 0 25px rgba(147, 51, 234, 0.6);
         }
 
         .rule-text {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
         }
 
         .rule-icon {
             font-size: 24px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
         }
 
         /* صندوق التفاصيل المنسدلة */
@@ -149,8 +156,8 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            padding: 0 35px;
-            background: rgba(15, 12, 28, 0.6);
+            padding: 0 40px;
+            background: rgba(25, 20, 45, 0.4);
             border-radius: 20px;
             margin-top: 5px;
             width: 100%;
@@ -159,18 +166,18 @@
         .rule-details ul {
             padding: 20px 20px 20px 0;
             list-style-type: square;
-            color: #d1cbe3;
+            color: #e2e8f0;
         }
 
         .rule-details li {
             margin-bottom: 12px;
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.7;
         }
 
         .active-details {
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            margin-bottom: 15px;
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -198,7 +205,7 @@
         </div>
     </main>
 
-    <!-- قسم القوانين الكامل والمطور بالملي -->
+    <!-- قسم القوانين الكامل والمطابق للصور بنسبة 100% -->
     <section id="rules" class="content-section">
         <h2 class="section-title">قوانين السيرفر</h2>
         
@@ -208,13 +215,13 @@
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">قوانين الحياة الجديدة - NLR</span>
-                    <span class="rule-icon">📖</span>
+                    <span class="rule-icon"><i class="fa-solid fa-book-open"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>عند موتك بشكل كامل في السيرفر، يعتبر ذلك نهاية حياتك السابقة وبداية حياة جديدة وتنسى كل الأفراد والسيناريوهات المرتبطة بموتك.</li>
-                        <li>يمنع منعاً باتاً العودة لمكان الوفاة أو التفاعل مع نفس الأشخاص إلا بعد مرور 15 دقيقة كاملة من الإنعاش.</li>
-                        <li>لا يحق لك الانتقام أو ملاحقة الشخص الذي قتلك في نفس السيناريو السابق.</li>
+                        <li>يُمنع منعاً باتاً تذكر أي حدث أو شخص أو تفاصيل تسببت في موتك بعد خروجك من المستشفى وإحيائك، وتعتبر بداية حياة جديدة كلياً لشخصيتك.</li>
+                        <li>يُمنع العودة إلى مكان موتك أو المنطقة المحيطة به (الزون) لأي سبب كان، إلا بعد مرور 15 دقيقة كاملة من وقت الإنعاش.</li>
+                        <li>يُمنع الانتقام من الشخص الذي قام بقتلك أو العودة لإكمال نفس السيناريو القتالي بعد الموت.</li>
                     </ul>
                 </div>
             </div>
@@ -223,13 +230,12 @@
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">الباور جيمنج - PowerGaming</span>
-                    <span class="rule-icon">🎮</span>
+                    <span class="rule-icon"><i class="fa-solid fa-gamepad"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يمنع القيام بأفعال مستحيلة وخارقة للعادة لا يمكن للإنسان الطبيعي فعلها في الواقع (مثل القفز بالسيارة من أعلى الجبل وعدم التضرر).</li>
-                        <li>يمنع قيادة المركبة بعد تضررها بشكل مدمر أو انفجار إطاراتها بالكامل.</li>
-                        <li>يجب عليك إعطاء الطرف الآخر فرصة عادلة في السيناريو دون استخدام ثغرات ميكانيك اللعبة.</li>
+                        <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية للاستفادة في اللعبة (مثل التحدث باللاسلكي وأنت مقيد بالكامل، أو قيادة سيارة منبطحة أو تالفة ومعدومة الإطارات).</li>
+                        <li>يُمنع القفز بالمركبات العادية من المرتفعات الشاهقة أو الجبال الوعرة وإكمال القيادة كأن شيئاً لم يكن.</li>
                     </ul>
                 </div>
             </div>
@@ -238,51 +244,44 @@
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">الخوف على الحياة - NVL</span>
-                    <span class="rule-icon">👤</span>
+                    <span class="rule-icon"><i class="fa-solid fa-user-shield"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يجب عليك تقدير قيمة حياتك والتمثيل بالخوف الكامل عندما يتم رفع السلاح عليك من مسافة قريبة.</li>
-                        <li>يمنع إخراج سلاحك أو محاولة الهروب والالتفاف إذا كنت محاصراً وتحت تهديد ناري مباشر.</li>
-                        <li>يتوجب عليك طاعة أوامر الخاطفين أو المهددين طالما كانت حياتك في خطر حقيقي كالحياة الواقعية.</li>
+                        <li>يجب عليك إظهار الخوف الشديد والامتثال للأوامر عند وقوعك تحت تهديد سلاح ناري مباشر وموجه نحوك من مسافة قريبة.</li>
+                        <li>يُمنع منعاً باتاً محاولة سحب سلاحك الخاص أو الهرب بالجري إذا كان الخصم يرفع السلاح عليك ومستعداً للإطلاق، ويتوجب تقدير قيمة حياتك.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 4. RDM & VDM -->
+            <!-- 4. Metagaming -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">القتل العشوائي والتخريب - RDM & VDM</span>
-                    <span class="rule-icon">💥</span>
+                    <span class="rule-text">الميتا جيمنج Metagaming</span>
+                    <span class="rule-icon"><i class="fa-solid fa-brain"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يمنع إطلاق النار أو تصفية أي لاعب بدون سبب درامي وقوي وبدون نقاش مسبق (RDM).</li>
-                        <li>يمنع استخدام المركبات لدهس المارة أو صدم السيارات بغرض تعطيلهم بدون مبرر (VDM).</li>
-                        <li>كل اشتباك ناري أو هجوم يجب أن يبدأ بتفاعل كلامي وتحذير واضح يعطي الطرف الآخر حق الاستجابة.</li>
+                        <li>يُمنع استخدام أي معلومات تم كسبها من خارج اللعبة (مثل الديسكورد، البث المباشر للاعب آخر، أو شات التيك توك) وتطبيقها في سيناريوهات الرول بلي داخل المدينة.</li>
+                        <li>لا يحق لشخصيتك داخل اللعبة معرفة أو استخدام أي معلومة لم تشهدها أو تسمعها بنفسها وبشكل مباشر أثناء اللعب.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 5. MetaGaming -->
+            <!-- 5. RDM -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">ميتا جيمنج - MetaGaming</span>
-                    <span class="rule-icon">📡</span>
+                    <span class="rule-text">القتل العشوائي - RDM</span>
+                    <span class="rule-icon"><i class="fa-solid fa-hand-fist"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يمنع استخدام المعلومات الخارجية (مثل شات البث، الديسكورد، أو كلام الأصدقاء خارج اللعبة) وتطبيقها داخل الرول بلي.</li>
-                        <li>شخصيتك داخل المدينة لا تعرف إلا ما تسمعه وتراه بنفسها أثناء اللعب فقط.</li>
+                        <li>يُمنع منعاً باتاً إطلاق النار على أي لاعب أو تصفيته دون وجود سيناريو برمج مسبق، ومبرر واضح مبني على حوار وتفاعل كلامي طويل.</li>
+                        <li>إطلاق النار العشوائي في الشوارع أو قتل المارة دون سبب درامي يعرض حسابك للتبنيد الفوري.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 6. Fail RP -->
+            <!-- 6. قانون تقدير الحياة -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">التخريب واللعب غير الواقعي - Fail RP</span>
-                    <span class="rule-icon">❌</span>
-                </div>
-                <div class="rule-details">
-                    <ul>
