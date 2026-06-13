@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* شريط التنقل العلوي المتطابق */
+        /* شريط التنقل العلوي */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -36,30 +36,11 @@
             border-bottom: 1px solid rgba(138, 43, 226, 0.2);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .logo span {
             font-size: 22px;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 1px;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #8a2be2, #4b0082);
-            box-shadow: 0 0 10px #8a2be2;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
         }
 
         .nav-links a {
@@ -80,7 +61,7 @@
 
         /* القسم الرئيسي للموقع */
         .hero-section {
-            height: 55vh;
+            height: 45vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,36 +77,20 @@
             z-index: 2;
         }
 
-        .main-logo-container {
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(circle, #8a2be2, #0b0914);
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 900;
-            font-size: 24px;
-        }
-
         .title {
             font-size: 55px;
             font-weight: 900;
             margin-bottom: 10px;
-            letter-spacing: 2px;
         }
 
         .description {
             font-size: 18px;
-            line-height: 1.8;
             color: #d1cbe3;
         }
 
-        /* أقسام المحتوى المتطابقة بالملي مع لقطة الشاشة */
+        /* قسم القوانين */
         .content-section {
-            padding: 40px 8% 80px 8%;
+            padding: 20px 8% 80px 8%;
             background: #09060f;
             display: flex;
             flex-direction: column;
@@ -137,7 +102,6 @@
             font-size: 40px;
             font-weight: 900;
             margin-bottom: 40px;
-            color: #ffffff;
             text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
         }
 
@@ -146,10 +110,10 @@
             max-width: 850px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
-        /* الأزرار العريضة المستديرة الحواف */
+        /* أزرار عريضة مستديرة الحواف نفس الصورة */
         .rule-bar {
             width: 100%;
             background: linear-gradient(135deg, #6320a0 0%, #4a127a 100%);
@@ -178,11 +142,9 @@
 
         .rule-icon {
             font-size: 24px;
-            display: flex;
-            align-items: center;
         }
 
-        /* التفاصيل المنسدلة للأسفل عند الضغط */
+        /* صندوق التفاصيل المنسدلة */
         .rule-details {
             max-height: 0;
             overflow: hidden;
@@ -191,7 +153,6 @@
             background: rgba(15, 12, 28, 0.6);
             border-radius: 20px;
             margin-top: 5px;
-            border: 1px solid transparent;
             width: 100%;
         }
 
@@ -202,13 +163,13 @@
         }
 
         .rule-details li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 16px;
             line-height: 1.7;
         }
 
         .active-details {
-            border-color: rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.3);
             margin-bottom: 15px;
         }
     </style>
@@ -217,10 +178,7 @@
 
     <!-- شريط التنقل العلوي -->
     <header class="navbar">
-        <div class="logo">
-            <span>Astro City</span>
-            <div class="logo-img"></div>
-        </div>
+        <div class="logo"><span>ASTRO CITY</span></div>
         <nav class="nav-links">
             <a href="#" class="active">الرئيسية</a>
             <a href="#rules">القوانين</a>
@@ -235,15 +193,12 @@
     <!-- الرئيسية -->
     <main class="hero-section">
         <div class="hero-content">
-            <div class="main-logo-container">AC</div>
-            <h1 class="title">Astro City</h1>
-            <p class="description">
-                القوانين والأنظمة الرسمية والمكتملة الخاصة بسيرفر استرو سيتي للحياة الواقعية.
-            </p>
+            <h1 class="title">ASTRO CITY</h1>
+            <p class="description">موسوعة الأنظمة والقوانين الرسمية والمكتملة بالكامل لسيرفر استرو سيتي.</p>
         </div>
     </main>
 
-    <!-- قسم قوانين السيرفر المتطابق مع لايف سيتي بالنصوص التفصيلية -->
+    <!-- قسم القوانين الكامل والمطور بالملي -->
     <section id="rules" class="content-section">
         <h2 class="section-title">قوانين السيرفر</h2>
         
@@ -257,9 +212,9 @@
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>عند موتك وتلقيك الإنعاش في المستشفى، تعتبر هذه حياة جديدة بالكامل وتنسى كل تفاصيل السيناريو الذي تسبب بموتك.</li>
-                        <li>يمنع منعاً باتاً العودة إلى موقع موتك السابق أو متابعة نفس السيناريو إلا بعد مرور 15 دقيقة كاملة.</li>
-                        <li>لا يمكنك الانتقام من الشخص الذي قتلك في حياتك السابقة، ويعتبر ذلك مخالفة صريحة يعاقب عليها القانون.</li>
+                        <li>عند موتك بشكل كامل في السيرفر، يعتبر ذلك نهاية حياتك السابقة وبداية حياة جديدة وتنسى كل الأفراد والسيناريوهات المرتبطة بموتك.</li>
+                        <li>يمنع منعاً باتاً العودة لمكان الوفاة أو التفاعل مع نفس الأشخاص إلا بعد مرور 15 دقيقة كاملة من الإنعاش.</li>
+                        <li>لا يحق لك الانتقام أو ملاحقة الشخص الذي قتلك في نفس السيناريو السابق.</li>
                     </ul>
                 </div>
             </div>
@@ -272,9 +227,9 @@
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يمنع القيام بأفعال مستحيلة ولا تطابق الحياة الواقعية، مثل قيادة سيارة رياضية فوق الجبال الوعرة أو التحدث واللاسلكي مقيد تماماً.</li>
-                        <li>يمنع قيادة المركبة بعد تعرضها لحادث قوي جداً أو عند انفجار الإطارات بالكامل.</li>
-                        <li>يجب الالتزام بالمنطق والعدالة في اللعب وإعطاء الطرف الآخر فرصة للتفاعل رول بلي دون استخدام ثغرات ميكانيك اللعبة.</li>
+                        <li>يمنع القيام بأفعال مستحيلة وخارقة للعادة لا يمكن للإنسان الطبيعي فعلها في الواقع (مثل القفز بالسيارة من أعلى الجبل وعدم التضرر).</li>
+                        <li>يمنع قيادة المركبة بعد تضررها بشكل مدمر أو انفجار إطاراتها بالكامل.</li>
+                        <li>يجب عليك إعطاء الطرف الآخر فرصة عادلة في السيناريو دون استخدام ثغرات ميكانيك اللعبة.</li>
                     </ul>
                 </div>
             </div>
@@ -287,14 +242,14 @@
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يجب عليك إظهار الخوف الشديد وتقدير قيمة حياتك إذا تم تهديدك بسلاح ناري مباشر من مسافة قريبة.</li>
-                        <li>يمنع إخراج سلاحك أو محاولة الهروب إذا كنت محاصراً من قِبل أشخاص يفوقونك عدداً أو مصوبين أسلحتهم نحوك.</li>
-                        <li>حياتك هي أغلى ما تملك في السيناريو، وعليك طاعة الأوامر تحت التهديد لحماية نفسك تماماً كالحقيقة.</li>
+                        <li>يجب عليك تقدير قيمة حياتك والتمثيل بالخوف الكامل عندما يتم رفع السلاح عليك من مسافة قريبة.</li>
+                        <li>يمنع إخراج سلاحك أو محاولة الهروب والالتفاف إذا كنت محاصراً وتحت تهديد ناري مباشر.</li>
+                        <li>يتوجب عليك طاعة أوامر الخاطفين أو المهددين طالما كانت حياتك في خطر حقيقي كالحياة الواقعية.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 4. RDM / VDM -->
+            <!-- 4. RDM & VDM -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">القتل العشوائي والتخريب - RDM & VDM</span>
@@ -302,4 +257,32 @@
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يمنع منعاً باتاً قتل أو إطلاق النار على أي لاعب دون وجود سيناريو برمج مسبق وسبب مقنع وقوي (RDM).</li>
+                        <li>يمنع إطلاق النار أو تصفية أي لاعب بدون سبب درامي وقوي وبدون نقاش مسبق (RDM).</li>
+                        <li>يمنع استخدام المركبات لدهس المارة أو صدم السيارات بغرض تعطيلهم بدون مبرر (VDM).</li>
+                        <li>كل اشتباك ناري أو هجوم يجب أن يبدأ بتفاعل كلامي وتحذير واضح يعطي الطرف الآخر حق الاستجابة.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. MetaGaming -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">ميتا جيمنج - MetaGaming</span>
+                    <span class="rule-icon">📡</span>
+                </div>
+                <div class="rule-details">
+                    <ul>
+                        <li>يمنع استخدام المعلومات الخارجية (مثل شات البث، الديسكورد، أو كلام الأصدقاء خارج اللعبة) وتطبيقها داخل الرول بلي.</li>
+                        <li>شخصيتك داخل المدينة لا تعرف إلا ما تسمعه وتراه بنفسها أثناء اللعب فقط.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. Fail RP -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">التخريب واللعب غير الواقعي - Fail RP</span>
+                    <span class="rule-icon">❌</span>
+                </div>
+                <div class="rule-details">
+                    <ul>
