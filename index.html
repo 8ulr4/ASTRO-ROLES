@@ -151,9 +151,9 @@
             align-items: center;
         }
 
-        /* صندوق الشرح المنسدلة */
+        /* صندوق الشرح المخفي */
         .rule-details {
-            display: none; /* مخفي تلقائياً ويفتح بالضغط */
+            display: none; /* يفتح بالضغط فقط */
             padding: 25px 40px;
             background: rgba(25, 20, 45, 0.6);
             border-radius: 20px;
@@ -199,89 +199,86 @@
         </div>
     </main>
 
-    <!-- قسم القوانين العشرة الكاملة بالملي -->
+    <!-- قسم القوانين -->
     <section id="rules" class="content-section">
         <h2 class="section-title">قوانين السيرفر</h2>
         
         <div class="rules-list">
             
-            <!-- 1. NLR -->
+            <!-- 1. القوانين العامة والشروط -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">قوانين الحياة الجديدة - NLR</span>
-                    <span class="rule-icon"><i class="fa-solid fa-book-open"></i></span>
+                    <span class="rule-text">القوانين العامة والشروط</span>
+                    <span class="rule-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يُمنع منعاً باتاً تذكر أي حدث أو شخص تسبب في موتك بعد خروجك من المستشفى، وتعتبر حياة جديدة كلياً لشخصيتك.</li>
-                        <li>يُمنع العودة إلى موقع موتك أو المنطقة المحيطة به إلا بعد مرور 15 دقيقة كاملة من وقت الإنعاش.</li>
+                        <li>الاحترام المتبادل بين جميع اللاعبين والتعاون مع الطاقم الإداري هو الركيزة الأساسية في سيرفر Astro City.</li>
+                        <li>يُمنع كلياً استغلال الثغرات أو الـ Glitches داخل الماب، ويتوجب التبليغ عنها فوراً بقسم الدعم الفني.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 2. PowerGaming -->
+            <!-- 2. قوانين القيادة -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">الباور جيمنج - PowerGaming</span>
-                    <span class="rule-icon"><i class="fa-solid fa-gamepad"></i></span>
+                    <span class="rule-text">قوانين القيادة</span>
+                    <span class="rule-icon"><i class="fa-solid fa-car"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>Ref-1 يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل).</li>
-                        <li>يُمنع القفز بالمركبات العادية من المرتفعات الشاهقة أو الجبال الوعرة وإكمال القيادة كأن شيئاً لم يكن.</li>
+                        <li>يجب الالتزام بالقيادة الواقعية؛ صدم سيارات اللاعبين الآخرين عمداً أو التفحيط العشوائي أمام المقرات الحكومية يندرج تحت التخريب.</li>
+                        <li>يُمنع استخدام السيارات الرياضية والمنخفضة للقيادة في الطرق الرملية المرتفعة أو الجبلية الوعرة.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 3. NVL -->
+            <!-- 3. نظام الوورنات -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">الخوف على الحياة - NVL</span>
-                    <span class="rule-icon"><i class="fa-solid fa-user-shield"></i></span>
+                    <span class="rule-text">نظام الوورنات (التحذيرات)</span>
+                    <span class="rule-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يجب عليك إظهار الخوف الشديد والامتثال للأوامر عند وقوعك تحت تهديد سلاح ناري مباشر موجه نحوك من مسافة قريبة.</li>
-                        <li>يُمنع محاولة سحب سلاحك الخاص أو الهرب بالجري إذا كان الخصم يرفع السلاح عليك ومستعداً للإطلاق.</li>
+                        <li>عند ارتكابك لأي مخالفة، سيتوجه لوحة حسابك "وورن" (تحذير رسمي). عند وصولك إلى 3 تحذيرات نشطة، سيتم حظر حسابك تلقائياً.</li>
+                        <li>لا يمكن إزالة التحذيرات إلا بتقديم طلب استئناف رسمي عبر تذاكر الديسكورد المعتمدة.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 4. Metagaming -->
+            <!-- 4. قوانين الشرطة -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">الميتا جيمنج Metagaming</span>
-                    <span class="rule-icon"><i class="fa-solid fa-brain"></i></span>
+                    <span class="rule-text">قوانين الشرطة</span>
+                    <span class="rule-icon"><i class="fa-solid fa-gavel"></i></span>
                 </div>
                 <div class="rule-details">
                     <ul>
-                        <li>يُمنع استخدام أي معلومات تم كسبها من خارج اللعبة (مثل الديسكورد، البث المباشر للاعب آخر) وتطبيقها داخل المدينة.</li>
-                        <li>لا يحق لشخصيتك استخدام أي معلومة لم تشهدها أو تسمعها بنفسها وبشكل مباشر أثناء اللعب.</li>
+                        <li>يُمنع على رجال الأمن استخدام الأسلحة الفتاكة أو إطلاق النار إلا في حال تعرض حياتهم أو حياة المواطنين لخطر ناري مباشر.</li>
+                        <li>يجب الالتزام التام بالتسلسل العسكري، وتنفيذ أوامر القيادة العليا، وتوثيق كافة المداهمات لضمان نزاهة اللعب.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 5. RDM -->
-            <div class="rule-container">
-                <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">القتل العشوائي - RDM</span>
-                    <span class="rule-icon"><i class="fa-solid fa-hand-fist"></i></span>
-                </div>
-                <div class="rule-details">
-                    <ul>
-                        <li>يُمنع منعاً باتاً إطلاق النار على أي لاعب أو تصفيته دون وجود سبب درامي ومبرر واضح مبني على حوار وتفاعل كلامي.</li>
-                        <li>إطلاق النار العشوائي في الشوارع أو قتل المارة دون سبب يعرض حسابك للعقوبة الفورية.</li>
-                    </ul>
-                </div>
-            </div>
+        </div>
+    </section>
 
-            <!-- 6. قانون تقدير الحياة -->
-            <div class="rule-container">
-                <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">قانون تقدير الحياة - Astro City</span>
-                    <span class="rule-icon"><i class="fa-solid fa-shield-halved"></i></span>
-                </div>
-                <div class="rule-details">
-                    <ul>
-                        <li>يجب الحفاظ على سلامة شخصيتك في كل المواقف؛ يُمنع الدخول في مواقف انتحارية أو استفزاز جماعات مسلحة وأنت بمفردك.</li>
-                        <li>الاستهتار بحياة الشخصية أو تعريضها للخطر العمد يُعتبر مخالفة صريحة لقواعد تمثيل الحياة الواقعية.</li>
+    <!-- كود الجافا سكريبت مدمج هنا في مكانه الصحيح قبل إغلاق الـ body -->
+    <script>
+        function toggleRule(element) {
+            var details = element.nextElementSibling;
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                var allDetails = document.querySelectorAll('.rule-details');
+                allDetails.forEach(function(item) {
+                    item.style.display = "none";
+                });
+                details.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
