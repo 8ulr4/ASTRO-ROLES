@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro City | استرو سيتي</title>
-    
-    <!-- كود الستايل والألوان البنفسجية المدمج -->
     <style>
         @import url('https://googleapis.com');
 
@@ -18,32 +16,18 @@
         }
 
         body {
-            background-color: #06040a;
+            background-color: #0b0914;
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* تأثير التوهج الخلفي المضيء */
-        .bg-glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgba(0,0,0,0) 70%);
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* شريط التنقل العلوي المحترف */
+        /* شريط التنقل العلوي المحاكي للأصل */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(6, 4, 10, 0.85);
-            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            background-color: rgba(15, 12, 28, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
@@ -51,41 +35,45 @@
             border-bottom: 1px solid rgba(138, 43, 226, 0.2);
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .logo span {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 900;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #a855f7, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #8a2be2; /* مربع مؤقت للشعار */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
         }
 
         .nav-links a {
-            color: #9ca3af;
+            color: #b3b3b3;
             text-decoration: none;
-            margin-right: 15px;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 8px 18px;
+            border-radius: 8px;
             font-weight: 700;
+            font-size: 15px;
             transition: 0.3s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #fff;
-            background: rgba(138, 43, 226, 0.15);
-        }
-
-        /* زر الديسكورد المضيء والمميز */
-        .nav-links .btn-discord {
-            background: #5865F2;
-            color: white !important;
-            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
-        }
-
-        .nav-links .btn-discord:hover {
-            background: #4752c4;
-            box-shadow: 0 0 25px rgba(88, 101, 242, 0.8);
+            background-color: #8a2be2;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
         }
 
         /* القسم الرئيسي للموقع */
@@ -95,81 +83,42 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, #130b24 0%, #06040a 100%);
+            position: relative;
+            background: radial-gradient(circle at center, #1b1035 0%, #0b0914 100%);
+            padding-top: 80px;
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 800px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .main-logo-container {
+            width: 180px;
+            height: 180px;
+            background-color: #8a2be2; /* مربع مؤقت للشعار الكبير */
+            border-radius: 50%;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
         }
 
         .title {
-            font-size: 75px;
+            font-size: 65px;
             font-weight: 900;
-            margin-bottom: 5px;
-            background: linear-gradient(to right, #ffffff, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 35px rgba(138, 43, 226, 0.5);
-        }
-
-        .tagline {
-            font-size: 22px;
-            color: #a855f7;
-            font-weight: 700;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .description {
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1.8;
-            color: #9ca3af;
-            margin-bottom: 35px;
+            color: #d1cbe3;
+            font-weight: 400;
         }
 
-        /* أزرار النيون التفاعلية في المنتصف */
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 14px 35px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s ease;
-        }
-
-        .btn-primary {
-            background: #8a2be2;
-            color: white;
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
-        }
-
-        .btn-primary:hover {
-            background: #9d4edd;
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.9);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid #8a2be2;
-            box-shadow: inset 0 0 0 rgba(138, 43, 226, 0);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(138, 43, 226, 0.1);
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* قسم القوانين */
+        /* قسم القوانين الأسفل */
         .content-section {
             padding: 100px 8%;
             background: #09060f;
@@ -177,20 +126,10 @@
 
         .section-title {
             text-align: center;
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 900;
             margin-bottom: 50px;
             color: #fff;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: #8a2be2;
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
         }
 
         .rules-container {
@@ -229,48 +168,49 @@
 </head>
 <body>
 
-    <div class="bg-glow"></div>
-
+    <!-- شريط التنقل العلوي بالكامل -->
     <header class="navbar">
         <div class="logo">
-            <span>ASTRO CITY</span>
+            <span>Astro City</span>
+            <div class="logo-img"></div>
         </div>
         <nav class="nav-links">
             <a href="#" class="active">الرئيسية</a>
             <a href="#rules">القوانين</a>
             <a href="#">المتجر</a>
-            <a href="#" class="btn-discord">سيرفر الديسكورد</a>
+            <a href="#">تقديم وظائف</a>
+            <a href="#">السيرفرات</a>
+            <a href="#">المؤسسين</a>
+            <a href="#">التفعيل</a>
         </nav>
     </header>
 
+    <!-- القسم الرئيسي والشعار بالمنتصف -->
     <main class="hero-section">
         <div class="hero-content">
-            <h1 class="title">ASTRO CITY</h1>
-            <p class="tagline">أقوى سيرفر حياة واقعية في روبلوكس</p>
+            <div class="main-logo-container"></div>
+            <h1 class="title">Astro City</h1>
             <p class="description">
-                مرحباً بك في مجتمع استرو سيتي للرول بلي. نقدم لك تجربة فريدة، فعاليات مستمرة، ووظائف حصرية ومتقدمة للجميع. انضم إلينا الآن لتصنع قصتك الخاصة!
+                سيرفر استرو سيتي هو مجتمع متكامل يهدف لتقديم تجربة حياة واقعية فريدة من نوعها، نركز على الاحترافية والعدالة وبناء مجتمع مترابط وممتع للجميع.
             </p>
-            <div class="hero-buttons">
-                <a href="#rules" class="btn-primary">قراءة القوانين</a>
-                <a href="#" class="btn-secondary">دخول السيرفر</a>
-            </div>
         </div>
     </main>
 
+    <!-- قسم القوانين المكتمل -->
     <section id="rules" class="content-section">
-        <h2 class="section-title">قوانين سيرفر استرو سيتي</h2>
+        <h2 class="section-title">قوانين مجتمع استرو سيتي</h2>
         <div class="rules-container">
             <div class="rule-box">
-                <h3>⚖️ الاحترام والعدالة</h3>
-                <p>يمنع منعاً باتاً السب، أو الاستهزاء بأي عضو أو إداري داخل مجتمع السيرفر.</p>
+                <h3>⚖️ الاحترام المتبادل</h3>
+                <p>يمنع منعاً باتاً السب، الشتم، أو الاستهزاء بأي عضو أو إداري داخل السيرفر.</p>
             </div>
             <div class="rule-box">
-                <h3>🚗 التخريب العمد (Fail RP)</h3>
-                <p>يجب الالتزام بمهام وأنظمة الحياة الواقعية تماماً وتجنب القيادة أو الأفعال غير المنطقية.</p>
+                <h3>🚗 التخريب (Fail RP)</h3>
+                <p>يجب الالتزام بمهام الحياة الواقعية تماماً وعدم القيام بأفعال غير منطقية أو تخريبية.</p>
             </div>
             <div class="rule-box">
-                <h3>🎙️ جودة التواصل</h3>
-                <p>يجب استخدام مايكروفون واضح وخالٍ من التشويش المزعج أثناء الحديث واللعب بالسيرفر.</p>
+                <h3>🎙️ المايكروفون</h3>
+                <p>يجب أن يكون لديك مايكروفون واضح وخالٍ من التشويش أثناء اللعب لضمان متعة الجميع.</p>
             </div>
         </div>
     </section>
