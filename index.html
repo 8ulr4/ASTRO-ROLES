@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* شريط التنقل العلوي */
+        /* شريط التنقل العلوي المتطابق */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -80,7 +80,7 @@
 
         /* القسم الرئيسي للموقع */
         .hero-section {
-            height: 60vh;
+            height: 55vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,8 +97,8 @@
         }
 
         .main-logo-container {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             background: radial-gradient(circle, #8a2be2, #0b0914);
             border-radius: 50%;
             margin: 0 auto 20px auto;
@@ -123,7 +123,7 @@
             color: #d1cbe3;
         }
 
-        /* أقسام المحتوى المتطابقة بالملي مع الصورة */
+        /* أقسام المحتوى المتطابقة بالملي مع لقطة الشاشة */
         .content-section {
             padding: 40px 8% 80px 8%;
             background: #09060f;
@@ -146,16 +146,16 @@
             max-width: 850px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
-        /* أزرار القوانين العريضة والمستديرة الحواف نفس تصميم الصورة */
+        /* الأزرار العريضة المستديرة الحواف */
         .rule-bar {
             width: 100%;
             background: linear-gradient(135deg, #6320a0 0%, #4a127a 100%);
             border: 1px solid rgba(138, 43, 226, 0.4);
             padding: 22px 35px;
-            border-radius: 25px; /* حواف دائرية واضحة */
+            border-radius: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -165,50 +165,51 @@
         }
 
         .rule-bar:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
             box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
             background: linear-gradient(135deg, #7429bb 0%, #56168f 100%);
         }
 
         .rule-text {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #ffffff;
-            letter-spacing: 0.5px;
         }
 
         .rule-icon {
-            font-size: 26px;
+            font-size: 24px;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        /* تفاصيل شرح القوانين منسدلة بشكل تفاعلي */
+        /* التفاصيل المنسدلة للأسفل عند الضغط */
         .rule-details {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             padding: 0 35px;
-            background: rgba(15, 12, 28, 0.5);
-            border-radius: 0 0 20px 20px;
-            margin-top: -10px;
+            background: rgba(15, 12, 28, 0.6);
+            border-radius: 20px;
+            margin-top: 5px;
             border: 1px solid transparent;
-            border-top: none;
             width: 100%;
         }
 
-        .rule-details p {
-            padding: 20px 0;
-            font-size: 16px;
-            line-height: 1.7;
+        .rule-details ul {
+            padding: 20px 20px 20px 0;
+            list-style-type: square;
             color: #d1cbe3;
         }
 
-        .active-details {
-            max-height: 200px;
-            border-color: rgba(138, 43, 226, 0.2);
+        .rule-details li {
             margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .active-details {
+            border-color: rgba(138, 43, 226, 0.3);
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -237,66 +238,68 @@
             <div class="main-logo-container">AC</div>
             <h1 class="title">Astro City</h1>
             <p class="description">
-                سيرفر استرو سيتي هو مجتمع متكامل يهدف لتقديم تجربة حياة واقعية فريدة من نوعها في روبلوكس.
+                القوانين والأنظمة الرسمية والمكتملة الخاصة بسيرفر استرو سيتي للحياة الواقعية.
             </p>
         </div>
     </main>
 
-    <!-- قسم قوانين السيرفر المتطابق مع لقطة الشاشة بالملي -->
+    <!-- قسم قوانين السيرفر المتطابق مع لايف سيتي بالنصوص التفصيلية -->
     <section id="rules" class="content-section">
         <h2 class="section-title">قوانين السيرفر</h2>
         
         <div class="rules-list">
             
-            <!-- القانون الأول -->
+            <!-- 1. NLR -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">قوانين الحياة الجديدة - NLR</span>
                     <span class="rule-icon">📖</span>
                 </div>
                 <div class="rule-details">
-                    <p>عند موتك في اللعبة، تنسى كل ما حدث معك في حياتك السابقة ولا يمكنك العودة لموقع موتك إلا بعد مرور الوقت المحدد بالقوانين الداخلية.</p>
+                    <ul>
+                        <li>عند موتك وتلقيك الإنعاش في المستشفى، تعتبر هذه حياة جديدة بالكامل وتنسى كل تفاصيل السيناريو الذي تسبب بموتك.</li>
+                        <li>يمنع منعاً باتاً العودة إلى موقع موتك السابق أو متابعة نفس السيناريو إلا بعد مرور 15 دقيقة كاملة.</li>
+                        <li>لا يمكنك الانتقام من الشخص الذي قتلك في حياتك السابقة، ويعتبر ذلك مخالفة صريحة يعاقب عليها القانون.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- القانون الثاني -->
+            <!-- 2. PowerGaming -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">الباور جيمنج - PowerGaming</span>
                     <span class="rule-icon">🎮</span>
                 </div>
                 <div class="rule-details">
-                    <p>يمنع منعاً باتاً القيام بأفعال خارقة أو غير منطقية لا يمكن للإنسان الطبيعي القيام بها في الحياة الواقعية لتفادي الخسارة.</p>
+                    <ul>
+                        <li>يمنع القيام بأفعال مستحيلة ولا تطابق الحياة الواقعية، مثل قيادة سيارة رياضية فوق الجبال الوعرة أو التحدث واللاسلكي مقيد تماماً.</li>
+                        <li>يمنع قيادة المركبة بعد تعرضها لحادث قوي جداً أو عند انفجار الإطارات بالكامل.</li>
+                        <li>يجب الالتزام بالمنطق والعدالة في اللعب وإعطاء الطرف الآخر فرصة للتفاعل رول بلي دون استخدام ثغرات ميكانيك اللعبة.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- القانون الثالث -->
+            <!-- 3. NVL -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">الخوف على الحياة - NVL</span>
                     <span class="rule-icon">👤</span>
                 </div>
                 <div class="rule-details">
-                    <p>يجب عليك إظهار الخوف وتثمين حياتك عند تهديدك بالسلاح من قِبل مجموعة تفوقك عدداً أو تسليحاً وتطبيق مبدأ الحياة الواقعية.</p>
+                    <ul>
+                        <li>يجب عليك إظهار الخوف الشديد وتقدير قيمة حياتك إذا تم تهديدك بسلاح ناري مباشر من مسافة قريبة.</li>
+                        <li>يمنع إخراج سلاحك أو محاولة الهروب إذا كنت محاصراً من قِبل أشخاص يفوقونك عدداً أو مصوبين أسلحتهم نحوك.</li>
+                        <li>حياتك هي أغلى ما تملك في السيناريو، وعليك طاعة الأوامر تحت التهديد لحماية نفسك تماماً كالحقيقة.</li>
+                    </ul>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- كود برمجي بسيط لجعل الأزرار منسدلة وتفاعلية عند الضغط -->
-    <script>
-        function toggleRule(element) {
-            var details = element.nextElementSibling;
-            if (details.style.maxHeight && details.style.maxHeight !== "0px") {
-                details.style.maxHeight = "0px";
-                details.classList.remove("active-details");
-            } else {
-                details.style.maxHeight = details.scrollHeight + "px";
-                details.classList.add("active-details");
-            }
-        }
-    </script>
-
-</body>
-</html>
+            <!-- 4. RDM / VDM -->
+            <div class="rule-container">
+                <div class="rule-bar" onclick="toggleRule(this)">
+                    <span class="rule-text">القتل العشوائي والتخريب - RDM & VDM</span>
+                    <span class="rule-icon">💥</span>
+                </div>
+                <div class="rule-details">
+                    <ul>
+                        <li>يمنع منعاً باتاً قتل أو إطلاق النار على أي لاعب دون وجود سيناريو برمج مسبق وسبب مقنع وقوي (RDM).</li>
