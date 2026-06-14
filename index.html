@@ -4,27 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro City | استرو سيتي</title>
+    
+    <!-- مكتبة الأيقونات الرسمية لضمان ظهور الأشكال -->
     <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
         @import url('https://googleapis.com');
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        body { background-color: #0b0914; color: #ffffff; overflow-x: hidden; padding: 40px 5%; }
-        .container { max-width: 850px; margin: 60px auto 0 auto; display: flex; flex-direction: column; align-items: center; }
-        .section-title { font-size: 36px; font-weight: 900; margin-bottom: 40px; text-align: center; text-shadow: 0 0 15px rgba(138, 43, 226, 0.5); }
-        .rules-list { width: 100%; display: flex; flex-direction: column; gap: 15px; }
-        .rule-bar { width: 100%; background-color: #9333ea; padding: 20px 40px; border-radius: 30px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); border: none; }
-        .rule-bar:hover { transform: scale(1.01); background-color: #a855f7; box-shadow: 0 0 25px rgba(147, 51, 234, 0.6); }
-        .rule-text { font-size: 21px; font-weight: 700; color: #ffffff; }
-        .rule-icon { font-size: 24px; color: #ffffff; display: flex; align-items: center; }
-        .rule-details { display: none; padding: 25px 40px; background: rgba(25, 20, 45, 0.6); border-radius: 20px; margin-top: 5px; width: 100%; border: 1px solid rgba(147, 51, 234, 0.3); }
-        .rule-details ul { padding-right: 20px; list-style-type: square; color: #e2e8f0; }
-        .rule-details li { margin-bottom: 12px; font-size: 17px; line-height: 1.7; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0914;
+            color: #ffffff;
+            overflow-x: hidden;
+            padding: 40px 3%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px; /* جعل القائمة عريضة وطويلة نفس لقطة الشاشة بالملي */
+            margin: 50px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+
+        .rules-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px; /* المسافة بين الأزرار */
+        }
+
+        /* الأزرار البنفسجية الطويلة جداً ومستديرة الحواف نفس لقطة الشاشة تماماً */
+        .rule-bar {
+            width: 100%;
+            background-color: #9333ea;
+            padding: 24px 45px; /* زيادة التباعد ليعطي نفس الطول والارتفاع الفخم */
+            border-radius: 40px; /* حواف دائرية انسيابية ومطابقة بالملي */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+
+        .rule-bar:hover {
+            transform: scale(1.005);
+            background-color: #a855f7;
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.7);
+        }
+
+        .rule-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .rule-icon {
+            font-size: 24px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        /* صندوق الشرح المنسدل والمحمي من التداخل والسطر الواحد */
+        .rule-details {
+            display: none; /* مخفي تلقائياً ويفتح بالكليك */
+            padding: 30px 45px;
+            background: rgba(20, 15, 38, 0.7);
+            border-radius: 25px;
+            margin-top: 8px;
+            width: 100%;
+            border: 1px solid rgba(147, 51, 234, 0.4);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .rule-details ul {
+            padding-right: 25px;
+            list-style-type: square;
+            color: #e2e8f0;
+        }
+
+        .rule-details li {
+            margin-bottom: 14px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h2 class="section-title">قوانين سيرفر استرو سيتي</h2>
+        
         <div class="rules-list">
+            
             <!-- 1. NLR -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -38,6 +130,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 2. PowerGaming -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -51,6 +144,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 3. NVL -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -64,6 +158,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 4. Metagaming -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -77,6 +172,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 5. RDM -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -90,7 +186,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- 6. قانون تقدير الحياة (تم التعديل الصحيح بالملي هنا) -->
+
+            <!-- 6. قانون تقدير الحياة -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
                     <span class="rule-text">قانون تقدير الحياة - Astro City</span>
@@ -103,6 +200,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 7. القوانين العامة والشروط -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -116,6 +214,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 8. قوانين القيادة -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -129,6 +228,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-- 9. نظام الوورنات -->
             <div class="rule-container">
                 <div class="rule-bar" onclick="toggleRule(this)">
@@ -138,30 +238,3 @@
                 <div class="rule-details">
                     <ul>
                         <li>عند ارتكابك لأي مخالفة، سيتوجه لوحة حسابك "وورن" (تحذير رسمي). عند وصولك إلى 3 تحذيرات نشطة، سيتم حظر حسابك تلقائياً.</li>
-                        <li>لا يمكن إزالة التحذيرات إلا بتقديم طلب استئناف رسمي عبر تذاكر الديسكورد المعتمدة.</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- 10. قوانين الشرطة -->
-            <div class="rule-container">
-                <div class="rule-bar" onclick="toggleRule(this)">
-                    <span class="rule-text">قوانين الشرطة</span>
-                    <span class="rule-icon"><i class="fa-solid fa-gavel"></i></span>
-                </div>
-                <div class="rule-details">
-                    <ul>
-                        <li>يُمنع على رجال الأمن استخدام الأسلحة الفتاكة أو إطلاق النار إلا في حال تعرض حياتهم أو حياة المواطنين لخطر ناري مباشر.</li>
-                        <li>يجب الالتزام التام بالتسلسل العسكري، وتنفيذ أوامر القيادة العليا، وتوثيق كافة المداهمات لضمان نزاهة اللعب.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function toggleRule(element) {
-            var details = element.nextElementSibling;
-            if (details.style.display === "block") { details.style.display = "none"; }
-            else {
-                var allDetails = document.querySelectorAll('.rule-details');
-                allDetails.forEach(function(item) { item.style.display = "none"; });
-                details.style.display = "block";
