@@ -58,7 +58,7 @@
             display: none;
         }
 
-        /* الأزرار البنفسجية العريضة الطويلة */
+        /* الأزرار البنفسجية العريضة الطويلة نفس لقطة الشاشة */
         .rule-bar {
             width: 100%;
             background-color: #9333ea;
@@ -91,7 +91,7 @@
             transition: transform 0.3s ease;
         }
 
-        /* صندوق الشرح المخفي المنسدل */
+        /* صندوق الشرح المخفي المنسدل ليعرض الكلمات بنظام ووضوح */
         .rule-details {
             max-height: 0;
             overflow: hidden;
@@ -116,7 +116,7 @@
             line-height: 1.8;
         }
 
-        /* فتح الصندوق مباشرة بالكليك بدون سكربتات معلقة */
+        /* فتح الصندوق مباشرة بالكليك والضغط */
         .toggle-input:checked ~ .rule-details {
             max-height: 500px;
             padding: 30px 45px;
@@ -160,7 +160,7 @@
                 </label>
                 <div class="rule-details">
                     <ul>
-                        <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل) [1].</li>
+                        <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل) [Ref-1].</li>
                         <li>يُمنع القفز بالمركبات العادية من المرتفعات الشاهقة أو الجبال الوعرة وإكمال القيادة كأن شيئاً لم يكن.</li>
                     </ul>
                 </div>
@@ -241,13 +241,8 @@
                 </div>
             </div>
 
-            <!-- 8. نظام الوورنات -->
-            <div class="rule-container">
-                <input type="checkbox" id="rule8" class="toggle-input">
-                <label for="rule8" class="rule-bar">
-                    <span class="rule-text">نظام الوورنات (التحذيرات)</span>
-                    <span class="rule-icon"><i class="fa-solid fa-bell"></i></span>
-                </label>
-                <div class="rule-details">
-                    <ul>
-                        <li>عند ارتكابك لأي مخالفة، سيتوجه لوحة حسابك "وورن" (تحذير رسمي). عند وصولك إلى 3 تحذيرات نشطة، سيتم حظر حسابك تلقائياً.</li>
+        </div>
+    </div>
+
+</body>
+</html>
