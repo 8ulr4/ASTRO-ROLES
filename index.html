@@ -104,19 +104,19 @@
             padding: 0 45px;
         }
 
-        .rule-details ul {
-            padding-right: 25px;
+        .rules-ul {
+            padding: 0 25px 0 0;
             list-style-type: square;
             color: #e2e8f0;
         }
 
-        .rule-details li {
+        .rules-ul li {
             margin-bottom: 14px;
             font-size: 18px;
             line-height: 1.8;
         }
 
-        /* فتح الصندوق مباشرة بالكليك والضغط */
+        /* فتح الصندوق مباشرة بالكليك والضغط عبر الـ CSS الخالص */
         .toggle-input:checked ~ .rule-details {
             max-height: 500px;
             padding: 30px 45px;
@@ -144,7 +144,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-book-open"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>عند موتك وتلقيك الإنعاش في المستشفى، تعتبر هذه حياة جديدة بالكامل وتنسى كل تفاصيل السيناريو الذي تسبب بموتك.</li>
                         <li>يمنع منعاً باتاً العودة إلى موقع موتك السابق أو متابعة نفس السيناريو إلا بعد مرور 15 دقيقة كاملة.</li>
                     </ul>
@@ -159,7 +159,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-gamepad"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل) [Ref-1].</li>
                         <li>يُمنع القفز بالمركبات العادية من المرتفعات الشاهقة أو الجبال الوعرة وإكمال القيادة كأن شيئاً لم يكن.</li>
                     </ul>
@@ -174,7 +174,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-user-shield"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>يجب عليك إظهار الخوف الشديد والامتثال للأوامر عند وقوعك تحت تهديد سلاح ناري مباشر موجه نحوك من مسافة قريبة.</li>
                         <li>يُمنع محاولة سحب سلاحك الخاص أو الهرب بالجري إذا كان الخصم يرفع السلاح عليك ومستعداً للإطلاق.</li>
                     </ul>
@@ -189,7 +189,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-brain"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>يُمنع استخدام أي معلومات تم كسبها من خارج اللعبة (مثل الديسكورد، البث المباشر للاعب آخر) وتطبيقها داخل المدينة.</li>
                         <li>لا يحق لشخصيتك استخدام أي معلومة لم تشهدها أو تسمعها بنفسها وبشكل مباشر أثناء اللعب.</li>
                     </ul>
@@ -204,7 +204,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-hand-fist"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>يُمنع منعاً باتاً إطلاق النار على أي لاعب أو تصفيته دون وجود سبب درامي ومبرر واضح مبني على حوار وتفاعل كلامي.</li>
                         <li>إطلاق النار العشوائي في الشوارع أو قتل المارة دون سبب يعرض حسابك للعقوبة الفورية.</li>
                     </ul>
@@ -219,7 +219,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-shield-halved"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>إذا تعرضت لحادث مروري قوي جداً بالسيارة أو سقطت من مكان مرتفع، يجب عليك إظهار التعب والألم والتمثيل بأنك مصاب كالحقيقة تماماً.</li>
                         <li>يُمنع منعاً باتاً النزول من المركبة بعد تعرضها لحادث عنيف ومتابعة الركض أو إطلاق النار مباشرة متجاهلاً الإصابة البليغة.</li>
                     </ul>
@@ -234,7 +234,7 @@
                     <span class="rule-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
                 </label>
                 <div class="rule-details">
-                    <ul>
+                    <ul class="rules-ul">
                         <li>الاحترام المتبادل بين جميع اللاعبين والتعاون مع الطاقم الإداري هو الركيزة الأساسية في سيرفر Astro City.</li>
                         <li>يُمنع كلياً استغلال الثغرات أو الـ Glitches داخل الماب، ويتوجب التبليغ عنها فوراً بقسم الدعم الفني.</li>
                     </ul>
