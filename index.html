@@ -28,7 +28,7 @@
 
         .container {
             width: 100%;
-            max-width: 1100px; /* عريضة وطويلة نفس لقطة الشاشة بالملي */
+            max-width: 1100px;
             margin: 50px auto 0 auto;
             display: flex;
             flex-direction: column;
@@ -54,17 +54,16 @@
             width: 100%;
         }
 
-        /* إخفاء خيار التشيك بوكس البرمجي اللي بيمثل الكليك */
         .toggle-input {
             display: none;
         }
 
-        /* الأزرار البنفسجية الطويلة العريضة نفس لقطة الشاشة تماماً */
+        /* الأزرار البنفسجية العريضة الطويلة */
         .rule-bar {
             width: 100%;
             background-color: #9333ea;
-            padding: 24px 45px; /* طول وارتفاع فخم مطابق للمطلوب */
-            border-radius: 40px; /* حواف دائرية انسيابية */
+            padding: 24px 45px;
+            border-radius: 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -92,7 +91,7 @@
             transition: transform 0.3s ease;
         }
 
-        /* صندوق الشرح المنسدل - الحين يشتغل بالستايل ومحمي تلقائياً */
+        /* صندوق الشرح المخفي المنسدل */
         .rule-details {
             max-height: 0;
             overflow: hidden;
@@ -117,15 +116,14 @@
             line-height: 1.8;
         }
 
-        /* السحر البرمجي: لما تضغط كليك، ينفتح الصندوق فوراً وبدون أي سكربت معلق */
+        /* فتح الصندوق مباشرة بالكليك بدون سكربتات معلقة */
         .toggle-input:checked ~ .rule-details {
-            max-height: 500px; /* يعطي مساحة للشرح لينزل بالكامل */
+            max-height: 500px;
             padding: 30px 45px;
             margin-top: 8px;
             border: 1px solid rgba(147, 51, 234, 0.4);
         }
 
-        /* تدوير الأيقونة عند الضغط كزينة إضافية */
         .toggle-input:checked ~ .rule-bar .rule-icon {
             transform: rotate(90deg);
         }
@@ -162,7 +160,7 @@
                 </label>
                 <div class="rule-details">
                     <ul>
-                        <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل) [R1].</li>
+                        <li>يُمنع القيام بأي فعل غير منطقي أو مستحيل تطبيقه في الحياة الواقعية (مثل التحدث باللاسلكي وأنت مقيد بالكامل) [1].</li>
                         <li>يُمنع القفز بالمركبات العادية من المرتفعات الشاهقة أو الجبال الوعرة وإكمال القيادة كأن شيئاً لم يكن.</li>
                     </ul>
                 </div>
@@ -248,3 +246,8 @@
                 <input type="checkbox" id="rule8" class="toggle-input">
                 <label for="rule8" class="rule-bar">
                     <span class="rule-text">نظام الوورنات (التحذيرات)</span>
+                    <span class="rule-icon"><i class="fa-solid fa-bell"></i></span>
+                </label>
+                <div class="rule-details">
+                    <ul>
+                        <li>عند ارتكابك لأي مخالفة، سيتوجه لوحة حسابك "وورن" (تحذير رسمي). عند وصولك إلى 3 تحذيرات نشطة، سيتم حظر حسابك تلقائياً.</li>
